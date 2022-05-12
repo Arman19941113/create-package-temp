@@ -12,6 +12,6 @@ const run = (command) => execSync(command, { stdio: 'inherit' })
 
 await fs.remove('dist')
 await run('tsc --project tsconfig.json')
-await run('rollup -c rollup.config.mjs')
 await run('api-extractor run -c api-extractor.json')
+await run('rollup -c rollup.config.mjs')
 await fs.remove('dist-ts')
