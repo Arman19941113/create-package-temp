@@ -1,16 +1,14 @@
 import * as path from 'path'
 import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueJsx from '@vitejs/plugin-vue-jsx'
+import { createVuePlugin } from 'vite-plugin-vue2'
 import postcssMixins from 'postcss-mixins'
-// @ts-ignore ignore
 import postcssNested from 'postcss-nested'
 import postcssPresetEnv from 'postcss-preset-env'
 
 // https://vitejs.dev/config/
 export default defineConfig({
   base: '/',
-  plugins: [vue(), vueJsx()],
+  plugins: [createVuePlugin({ jsx: true })],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

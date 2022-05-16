@@ -11,5 +11,5 @@ Npm packages templates for class library, function library, vue component...
 ## Quick Start
 
 ```bash
-pnpm create package-temp my-package
+pnpm create package-temp
 ```

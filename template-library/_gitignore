@@ -3,7 +3,6 @@
 
 .idea/
 node_modules/
-dist/
-dist-ssr/
+dist*/
 temp/
 coverage/

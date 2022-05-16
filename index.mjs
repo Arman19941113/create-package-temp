@@ -5,7 +5,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { execSync } from 'child_process'
 import prompts from 'prompts'
-import { red, cyan, yellow, green } from 'kolorist'
+import { red, cyan, yellow, green, lightGreen } from 'kolorist'
 
 const cwd = process.cwd()
 const errorException = msg => new Error(`${red('✖')} ${msg}`)
@@ -13,7 +13,8 @@ const stepLog = msg => console.log(cyan(msg))
 
 const TEMPLATES = [
   { name: 'library', color: yellow },
-  { name: 'component-vue3', color: green },
+  { name: 'component-vue2', color: green },
+  { name: 'component-vue3', color: lightGreen },
 ]
 
 const RENAME_FILES = {
