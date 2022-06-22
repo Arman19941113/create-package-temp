@@ -13,4 +13,4 @@ const stepLog = (msg) => console.log(chalk.cyan(msg))
 
 await fs.remove('dist')
 stepLog('\nBuilding library...\n')
-await run('vite build --emptyOutDir false')
+run('vite build --emptyOutDir false')

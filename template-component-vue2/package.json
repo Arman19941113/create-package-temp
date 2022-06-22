@@ -10,7 +10,7 @@
     "preview": "cd demo && vite preview"
   },
   "lint-staged": {
-    "*.{jsx,vue}": "eslint",
+    "*.{js,jsx,vue}": "eslint",
     "*.{css,vue}": "stylelint"
   },
   "dependencies": {

@@ -11,7 +11,7 @@ process.on('exit', exitCode => {
 const run = (command) => execSync(command, { stdio: 'inherit' })
 
 await fs.remove('dist')
-await run('tsc --project tsconfig.json')
-await run('api-extractor run -c api-extractor.json')
-await run('rollup -c rollup.config.mjs')
+run('tsc --project tsconfig.json')
+run('api-extractor run -c api-extractor.json')
+run('rollup -c rollup.config.mjs')
 await fs.remove('dist-ts')

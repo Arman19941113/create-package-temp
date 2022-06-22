@@ -17,7 +17,7 @@ if (execSync('git diff --staged').length) {
   process.exit()
 }
 
-const RELEASE_LEVELS = ['patch', 'prepatch', 'minor', 'preminor', 'major', 'premajor']
+const RELEASE_LEVELS = ['prerelease', 'patch', 'prepatch', 'minor', 'preminor', 'major', 'premajor']
 const NPM_DIST_TAGS = ['latest', 'beta', 'next']
 
 const publishPkgPath = path.resolve('package.npm.json')
