@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2022",
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -14,9 +14,10 @@
     "noUnusedParameters": true,
     "strictNullChecks": true,
     "allowUnreachableCode": false,
-    "lib": ["esnext"],
+    "lib": ["esnext", "dom"],
     "jsx": "preserve",
     "rootDir": ".",
+    "baseUrl": ".",
     "paths": { }
   },
   "include": ["src/**/*.ts"]

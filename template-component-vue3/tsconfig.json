@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es2020",
+    "target": "es2022",
     "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -17,6 +17,7 @@
     "lib": ["esnext", "dom"],
     "jsx": "preserve",
     "rootDir": ".",
+    "baseUrl": ".",
     "paths": { }
   },
   "include": ["src/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]

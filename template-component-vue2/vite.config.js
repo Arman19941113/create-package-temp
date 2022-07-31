@@ -1,25 +1,13 @@
 import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2'
-import postcssMixins from 'postcss-mixins'
-import postcssNested from 'postcss-nested'
-import postcssPresetEnv from 'postcss-preset-env'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [createVuePlugin({ jsx: true })],
-  css: {
-    postcss: {
-      plugins: [
-        postcssMixins,
-        postcssNested,
-        postcssPresetEnv({
-          stage: 0,
-        }),
-      ],
-    },
-  },
+  plugins: [
+    createVuePlugin({ jsx: true }),
+  ],
   build: {
-    target: 'es2020',
+    target: 'es2022',
     outDir: 'dist',
     lib: {
       entry: 'src/index.js',
@@ -32,6 +20,5 @@ export default defineConfig({
         format: 'es',
       },
     },
-    reportCompressedSize: false,
   },
 })

@@ -1,10 +1,6 @@
-import { defineConfig, splitVendorChunkPlugin } from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
-import postcssMixins from 'postcss-mixins'
-// @ts-ignore ignore
-import postcssNested from 'postcss-nested'
-import postcssPresetEnv from 'postcss-preset-env'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -12,19 +8,8 @@ export default defineConfig({
     vue(),
     vueJsx(),
   ],
-  css: {
-    postcss: {
-      plugins: [
-        postcssMixins,
-        postcssNested,
-        postcssPresetEnv({
-          stage: 0,
-        }),
-      ],
-    },
-  },
   build: {
-    target: 'es2020',
+    target: 'es2022',
     outDir: 'dist',
     lib: {
       entry: 'src/index.ts',
@@ -37,6 +22,5 @@ export default defineConfig({
         format: 'es',
       },
     },
-    reportCompressedSize: false,
   },
 })

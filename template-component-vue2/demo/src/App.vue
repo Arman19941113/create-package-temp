@@ -1,27 +1,16 @@
 <script>
-import 'package/styles/variable.css'
-import image from '@/assets/girl.jpg'
 import { HelloButton, HelloMessage } from 'package/index'
 
 export default {
-  name: 'App',
   components: {
     HelloButton,
     HelloMessage,
-  },
-  data() {
-    return {
-      image,
-    }
   },
 }
 </script>
 
 <template>
   <div id="app">
-    <h1>Example</h1>
-    <img :src="image" alt="" width="500">
-
     <h1>Hello Button</h1>
     <div>
       <HelloButton>你好</HelloButton>
@@ -36,4 +25,16 @@ export default {
   </div>
 </template>
 
-<style src="/src/styles/app.css"></style>
+<style>
+  @import "@/styles/mixins.css";
+
+  #app {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    height: 100%;
+    padding: 100px 0;
+    overflow: auto;
+    @mixin scrollbar-mixin;
+  }
+</style>
