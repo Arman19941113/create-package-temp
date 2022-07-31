@@ -18,12 +18,13 @@
     ".": "./dist/index.esm.js",
     "./*": "./*"
   },
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "peerDependencies": {
     "vue": "^2.6.0"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   }
 }
 

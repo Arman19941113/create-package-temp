@@ -3,14 +3,21 @@
     "target": "es2020",
     "module": "esnext",
     "moduleResolution": "node",
-    "lib": ["esnext", "dom"],
-    "strict": true,
-    "esModuleInterop": true,
     "resolveJsonModule": true,
-    "rootDir": "src",
-    "outDir": "dist-ts",
-    "declaration": true,
-    "emitDeclarationOnly": true
+    "esModuleInterop": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "allowUnreachableCode": false,
+    "lib": ["esnext"],
+    "jsx": "preserve",
+    "rootDir": ".",
+    "paths": { }
   },
   "include": ["src/**/*.ts"]
 }
