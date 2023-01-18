@@ -2,6 +2,7 @@
   "name": "template-component-vue2",
   "private": true,
   "scripts": {
+    "postinstall": "husky install",
     "lint": "eslint --ext js,jsx,vue src demo && stylelint '{src,demo}/**/*.{css,vue}'",
     "build": "node scripts/build.mjs",
     "release": "node scripts/release.mjs",
