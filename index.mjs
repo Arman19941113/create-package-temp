@@ -21,7 +21,7 @@ const RENAME_FILES = {
   _gitignore: '.gitignore',
 }
 
-async function getPromptResult() {
+async function getPromptResult () {
   try {
     const regString = '^(?:@[a-z0-9-*~][a-z0-9-*._~]*/)?[a-z0-9-~][a-z0-9-._~]*$'
     const nameReg = new RegExp(regString)
@@ -105,6 +105,9 @@ const packageJsonFiles = ['package.json', 'package.npm.json']
 packageJsonFiles.forEach(filePath => {
   const parsedPkgJson = JSON.parse(fs.readFileSync(path.join(templatePath, filePath), 'utf-8'))
   parsedPkgJson.name = projectName
+  if (filePath === 'package.json') {
+    parsedPkgJson.scripts.postinstall = 'husky install'
+  }
   write(filePath, JSON.stringify(parsedPkgJson, null, 2) + '\n')
 })
 // copy other files
@@ -126,11 +129,11 @@ console.log(`\nDone. Now run ${cyan('cd ' + path.relative(cwd, rootPath))} and e
  * helpers
  */
 
-function isEmpty(path) {
+function isEmpty (path) {
   return fs.readdirSync(path).length === 0
 }
 
-function emptyDir(dir) {
+function emptyDir (dir) {
   if (!fs.existsSync(dir)) {
     return
   }
@@ -146,7 +149,7 @@ function emptyDir(dir) {
   }
 }
 
-function copy(src, dest) {
+function copy (src, dest) {
   const stat = fs.statSync(src)
   if (stat.isDirectory()) {
     copyDir(src, dest)
@@ -155,7 +158,7 @@ function copy(src, dest) {
   }
 }
 
-function copyDir(srcDir, destDir) {
+function copyDir (srcDir, destDir) {
   fs.mkdirSync(destDir, { recursive: true })
   for (const file of fs.readdirSync(srcDir)) {
     const srcFile = path.resolve(srcDir, file)
