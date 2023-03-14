@@ -1,36 +1,31 @@
 :root {
   --blackColor: #000;
-  --whiteColor: #FFF;
-
+  --whiteColor: #fff;
   --textColor1: #303133;
   --textColor2: #606266;
   --textColor3: #909399;
-  --textColor4: #C3C6CC;
-  --textColorDisabled: #C0C4CC;
-  --textColorPlaceholder: #CDCDCD;
-  --borderColor1: #DCDFE6;
-  --borderColor2: #E4E7ED;
-  --borderColor3: #F0F0F0;
-  --borderColorDisabled: #F8F8F8;
-  --backgroundColorDisabled: #EBEEF5;
-
-  --primaryColor: #409EFF;
-  --primaryColorDark: #3A84FF;
-  --primaryColorLight: #66B1FF;
-  --primaryColorDisabled: #A0CFFF;
-
-  --successColor: #67C23A;
-  --successColorDark: #5DAF34;
-  --successColorLight: #85CE61;
-  --successColorDisabled: #B3E09D;
-
-  --warningColor: #E6A23C;
-  --warningColorDark: #CF9236;
-  --warningColorLight: #EBB563;
-  --warningColorDisabled: #F3D19E;
-
-  --dangerColor: #F56C6C;
-  --dangerColorDark: #DD6161;
-  --dangerColorLight: #F78989;
-  --dangerColorDisabled: #FAB6B6;
+  --textColor4: #c3c6cc;
+  --textColorDisabled: #c0c4cc;
+  --textColorPlaceholder: #cdcdcd;
+  --borderColor1: #dcdfe6;
+  --borderColor2: #e4e7ed;
+  --borderColor3: #f0f0f0;
+  --borderColorDisabled: #f8f8f8;
+  --backgroundColorDisabled: #ebeef5;
+  --primaryColor: #409eff;
+  --primaryColorDark: #3a84ff;
+  --primaryColorLight: #66b1ff;
+  --primaryColorDisabled: #a0cfff;
+  --successColor: #67c23a;
+  --successColorDark: #5daf34;
+  --successColorLight: #85ce61;
+  --successColorDisabled: #b3e09d;
+  --warningColor: #e6a23c;
+  --warningColorDark: #cf9236;
+  --warningColorLight: #ebb563;
+  --warningColorDisabled: #f3d19e;
+  --dangerColor: #f56c6c;
+  --dangerColorDark: #dd6161;
+  --dangerColorLight: #f78989;
+  --dangerColorDisabled: #fab6b6;
 }

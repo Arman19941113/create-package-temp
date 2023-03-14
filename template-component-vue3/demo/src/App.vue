@@ -6,10 +6,18 @@ import { HelloButton, HelloMessage } from 'package/index'
   <h1>Hello Button</h1>
   <div>
     <HelloButton>你好</HelloButton>
-    <HelloButton theme="primary">你好</HelloButton>
-    <HelloButton theme="success">你好</HelloButton>
-    <HelloButton theme="warning">你好</HelloButton>
-    <HelloButton theme="danger">你好</HelloButton>
+    <HelloButton theme="primary">
+      你好
+    </HelloButton>
+    <HelloButton theme="success">
+      你好
+    </HelloButton>
+    <HelloButton theme="warning">
+      你好
+    </HelloButton>
+    <HelloButton theme="danger">
+      你好
+    </HelloButton>
   </div>
 
   <h1>Hello Message</h1>
@@ -26,6 +34,7 @@ import { HelloButton, HelloMessage } from 'package/index'
     height: 100%;
     padding: 100px 0;
     overflow: auto;
+
     @mixin scrollbar-mixin;
   }
 </style>

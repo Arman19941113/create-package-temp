@@ -31,33 +31,35 @@ module.exports = {
     withDefaults: 'readonly',
   },
   rules: {
-    "indent": ["error", 2],
-    // Typescript recommended
-    '@typescript-eslint/ban-ts-comment': ['error', {
-      'ts-expect-error': 'allow-with-description',
-      'ts-ignore': 'allow-with-description',
-      'ts-nocheck': 'allow-with-description',
-      'ts-check': 'allow-with-description',
-      minimumDescriptionLength: 1,
-    }],
-    // Priority B: Strongly Recommended
-    'vue/html-closing-bracket-newline': ['error', {
-      'singleline': 'never',
-      'multiline': 'never',
-    }],
-    'vue/html-indent': ['error', 2, {
-      'alignAttributesVertically': false,
-    }],
-    'vue/html-self-closing': ['error', {
-      'html': {
-        'void': 'never',
-        'normal': 'never',
-        'component': 'always',
+    'indent': [
+      'error', 2, {
+        'SwitchCase': 1,
       },
-      'svg': 'never',
-      'math': 'never',
-    }],
+    ],
+    // Typescript recommended
+    '@typescript-eslint/ban-ts-comment': [
+      'error', {
+        'ts-expect-error': 'allow-with-description',
+        'ts-ignore': 'allow-with-description',
+        'ts-nocheck': 'allow-with-description',
+        'ts-check': 'allow-with-description',
+        minimumDescriptionLength: 1,
+      },
+    ],
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    // Vue recommended
+    'vue/html-self-closing': [
+      'error', {
+        'html': {
+          'void': 'never',
+          'normal': 'never',
+          'component': 'always',
+        },
+        'svg': 'never',
+        'math': 'never',
+      },
+    ],
     'vue/max-attributes-per-line': 'off',
-    'vue/singleline-html-element-content-newline': 'off',
   },
 }

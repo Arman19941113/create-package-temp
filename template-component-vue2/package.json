@@ -3,6 +3,8 @@
   "private": true,
   "scripts": {
     "lint": "eslint --ext js,jsx,vue src demo && stylelint '{src,demo}/**/*.{css,vue}'",
+    "lint:js": "eslint --fix --ext js,jsx,vue src demo",
+    "lint:css": "stylelint --fix '{src,demo}/**/*.{css,vue}'",
     "build": "node scripts/build.mjs",
     "release": "node scripts/release.mjs",
     "dev": "cd demo && vite",

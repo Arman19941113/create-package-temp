@@ -11,6 +11,7 @@
   &::-webkit-scrollbar-thumb {
     border-radius: $borderRadius;
     background-color: $color;
+
     &:hover {
       background-color: $hoverColor;
     }

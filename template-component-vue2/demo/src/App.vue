@@ -35,6 +35,7 @@ export default {
     height: 100%;
     padding: 100px 0;
     overflow: auto;
+
     @mixin scrollbar-mixin;
   }
 </style>

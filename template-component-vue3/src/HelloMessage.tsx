@@ -7,7 +7,7 @@ const HelloMessage = defineComponent({
       default: 'Hello World',
     },
   },
-  render() {
+  render () {
     return <div style="color: cyan;">{this.message}</div>
   },
 })
