@@ -1,9 +1,11 @@
 import fs from 'fs'
 import path from 'path'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
+
 import replace from '@rollup/plugin-replace'
+import typescript from '@rollup/plugin-typescript'
+import { nodeResolve } from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
+
 import rollupPostcss from 'rollup-plugin-postcss'
 import postcssPresetEnv from 'postcss-preset-env'
 import postcssNested from 'postcss-nested'
@@ -14,7 +16,7 @@ const npmPkg = JSON.parse(fs.readFileSync(npmPkgPath, 'utf-8'))
 const pkgName = npmPkg.name
 const outputName = pkgName.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join('')
 
-const devTasks = {
+const jsTasks = {
   input: 'src/index.ts',
   external: ['vue'],
   output: [
@@ -23,6 +25,7 @@ const devTasks = {
       file: 'dist/index.global.js',
       format: 'iife',
       globals: { vue: 'Vue' },
+      plugins: [terser()],
     },
     {
       file: 'dist/index.cjs.js',
@@ -34,50 +37,22 @@ const devTasks = {
     },
   ],
   plugins: [
-    nodeResolve(),
-    typescript(),
-    replace({
-      preventAssignment: true,
-      values: {
-        'process.env.NODE_ENV': JSON.stringify('development'),
-      },
-    }),
-  ],
-}
-
-const prodTasks = {
-  input: 'src/index.ts',
-  external: ['vue'],
-  output: [
-    {
-      name: outputName,
-      file: 'dist/index.global.prod.js',
-      format: 'iife',
-      globals: { vue: 'Vue' },
-    },
-    {
-      file: 'dist/index.cjs.prod.js',
-      format: 'cjs',
-    },
-    {
-      file: 'dist/index.esm.prod.js',
-      format: 'es',
-    },
-  ],
-  plugins: [
-    nodeResolve(),
-    typescript(),
     replace({
       preventAssignment: true,
       values: {
         'process.env.NODE_ENV': JSON.stringify('production'),
       },
     }),
-    terser(),
+    typescript({
+      compilerOptions: {
+        removeComments: true,
+      },
+    }),
+    nodeResolve(),
   ],
 }
 
-const styleTask = {
+const cssTask = {
   input: 'src/index.css',
   output: {
     file: 'dist/index.css',
@@ -98,7 +73,6 @@ const styleTask = {
 }
 
 export default [
-  devTasks,
-  prodTasks,
-  styleTask,
+  jsTasks,
+  cssTask,
 ]

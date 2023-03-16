@@ -4,7 +4,7 @@ Npm packages templates for class library, function library, vue component...
 
 ## Environment
 
-- node >= 14
+- node >= 16
 - pnpm
 - git
 
