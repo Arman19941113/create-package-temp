@@ -27,18 +27,19 @@ module.exports = {
         'SwitchCase': 1,
       },
     ],
-    // Priority B: Strongly Recommended
-    'vue/html-closing-bracket-newline': [
+    // Typescript recommended
+    '@typescript-eslint/ban-ts-comment': [
       'error', {
-        'singleline': 'never',
-        'multiline': 'never',
+        'ts-expect-error': 'allow-with-description',
+        'ts-ignore': 'allow-with-description',
+        'ts-nocheck': 'allow-with-description',
+        'ts-check': 'allow-with-description',
+        minimumDescriptionLength: 1,
       },
     ],
-    'vue/html-indent': [
-      'error', 2, {
-        'alignAttributesVertically': false,
-      },
-    ],
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
+    // Vue recommended
     'vue/html-self-closing': [
       'error', {
         'html': {
@@ -50,7 +51,9 @@ module.exports = {
         'math': 'never',
       },
     ],
-    'vue/max-attributes-per-line': 'off',
-    'vue/singleline-html-element-content-newline': 'off',
+    'vue/max-attributes-per-line': ['error', {
+      'singleline': 4,
+      'multiline': 1,
+    }],
   },
 }

@@ -27,6 +27,7 @@ module.exports = {
         'SwitchCase': 1,
       },
     ],
+    // Typescript recommended
     '@typescript-eslint/ban-ts-comment': [
       'error', {
         'ts-expect-error': 'allow-with-description',
@@ -36,5 +37,7 @@ module.exports = {
         minimumDescriptionLength: 1,
       },
     ],
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-non-null-assertion': 'off',
   },
 }
